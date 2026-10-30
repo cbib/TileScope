@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tilescope"
+dynamic = ["version"]
+description = "Multi-scale spatial analysis for spatial transcriptomics data"
+readme = "tilescope/README.md"
+license = { file = "tilescope/LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0.2,<3.0.0",
+    "pandas>=2.3.3,<3.0.0",
+    "scipy>=1.13.1,<2.0.0",
+    "shapely>=2.0.7,<3.0.0",
+    "matplotlib>=3.9.4,<4.0.0",
+    "pdf2image>=1.17.0,<2.0.0",
+    "pydantic>=2.12.3,<3.0.0",
+    "pydantic_core>=2.41.4,<3.0.0",
+    "pandera>=0.26.1,<1.0.0",
+    "scikit-learn>=1.6.1,<2.0.0",
+    "scikit-image>=0.24.0,<1.0.0",
+    "statsmodels>=0.14.0,<1.0.0",
+    "packaging>=25.0,<26.0.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.4.2,<9.0.0",
+    "typeguard>=4.4.4,<5.0.0",
+]
+
+[project.scripts]
+tilescope = "tilescope.tilescope:main"
+
+[tool.hatch.version]
+path = "tilescope/__version__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tilescope"]
+exclude = [
+    "tilescope/tests",
+    "tilescope/tests/**",
+    "tilescope/tilescope_output",       # dev-run leftovers
+    "tilescope/tilescope_output/**",
+    "tilescope/docs",                    # source docs, not runtime data
+    "tilescope/docs/**",
+]

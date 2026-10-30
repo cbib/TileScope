@@ -1,0 +1,23 @@
+venv/
+ENV_DIR/
+*.pyc
+__pycache__/
+.DS_Store
+simulation_output/
+tilescope_output*/
+tilescope_output_gbm_new/
+tilescope_output_sim_new/
+tests/tests_output/
+example_output*/
+*.md
+!README.md
+!tests/README.md
+!api/*.md
+trace.txt
+data/
+notes.txt
+notex.txt
+project_specs.docx
+CLAUDE.md
+Target design.docx
+*.bak

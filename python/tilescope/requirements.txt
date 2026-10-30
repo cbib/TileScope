@@ -1,0 +1,33 @@
+# TileScope - Multi-scale spatial analysis for spatial transcriptomics
+# Core dependencies for running analysis and simulations
+
+# Data structures and numerical computing
+numpy>=2.0.2,<3.0.0
+pandas>=2.3.3,<3.0.0
+scipy>=1.13.1,<2.0.0
+
+# Spatial geometry and computational geometry
+shapely>=2.0.7,<3.0.0
+
+# Visualization
+matplotlib>=3.9.4,<4.0.0
+pdf2image>=1.17.0,<2.0.0  # For HTML report generation with embedded visuals
+
+# Configuration and validation
+pydantic>=2.12.3,<3.0.0
+pydantic_core>=2.41.4,<3.0.0
+pandera>=0.26.1,<1.0.0
+
+# Machine learning (for clustering and spatial analysis)
+scikit-learn>=1.6.1,<2.0.0
+scikit-image>=0.24.0,<1.0.0
+
+# Statistics (Benjamini-Hochberg / Benjamini-Yekutieli multiple-testing correction)
+statsmodels>=0.14.0,<1.0.0
+
+# Testing dependencies
+pytest>=8.4.2,<9.0.0
+typeguard>=4.4.4,<5.0.0
+
+# Utilities
+packaging>=25.0,<26.0.0

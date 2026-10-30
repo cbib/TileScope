@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">TileScope telescope logo</title>
+  <desc id="desc">A clean vector logo showing a telescope observing a regular colored tessellation, with the word TileScope.</desc>
+  <defs>
+    <linearGradient id="tubeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#244B8A"/>
+      <stop offset="100%" stop-color="#4A7BC4"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5DC0C9"/>
+      <stop offset="100%" stop-color="#7861D9"/>
+    </linearGradient>
+    <clipPath id="lensClip">
+      <circle cx="305" cy="190" r="72"/>
+    </clipPath>
+    <style>
+      .strokeNavy{stroke:#16345E;stroke-width:8;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;shape-rendering:geometricPrecision}
+      .strokeThin{stroke:#16345E;stroke-width:5;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;shape-rendering:geometricPrecision}
+      .gridStroke{stroke:#FFFFFF;stroke-width:4;vector-effect:non-scaling-stroke;shape-rendering:geometricPrecision}
+      .brand{font-family:Arial, Helvetica, sans-serif;font-weight:700;letter-spacing:0.5px}
+    </style>
+  </defs>
+  <g transform="translate(30 18)">
+    <line x1="132" y1="280" x2="94" y2="354" class="strokeNavy"/>
+    <line x1="132" y1="280" x2="168" y2="354" class="strokeNavy"/>
+    <line x1="132" y1="280" x2="132" y2="356" class="strokeThin"/>
+    <circle cx="132" cy="280" r="15" fill="#5DC0C9" class="strokeThin"/>
+    <g transform="rotate(-18 170 225)">
+      <rect x="90" y="190" rx="18" ry="18" width="170" height="46" fill="url(#tubeGrad)" class="strokeNavy"/>
+      <rect x="245" y="185" rx="10" ry="10" width="34" height="56" fill="#8FD5DA" class="strokeNavy"/>
+      <rect x="78" y="197" rx="8" ry="8" width="26" height="32" fill="#8FD5DA" class="strokeNavy"/>
+      <rect x="130" y="177" rx="7" ry="7" width="30" height="18" fill="#7861D9" class="strokeThin"/>
+      <line x1="145" y1="195" x2="152" y2="232" class="strokeThin"/>
+    </g>
+    <line x1="244" y1="204" x2="286" y2="196" stroke="#8AA9D8" stroke-width="5" stroke-dasharray="9 10" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    <circle cx="305" cy="190" r="72" fill="#F5F8FD" class="strokeNavy"/>
+    <g clip-path="url(#lensClip)">
+      <rect x="233" y="118" width="144" height="144" fill="#EEF3FB"/>
+      <rect x="233" y="118" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="257" y="118" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="281" y="118" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="305" y="118" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="329" y="118" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="353" y="118" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="233" y="142" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="257" y="142" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="281" y="142" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="305" y="142" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="329" y="142" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="353" y="142" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="233" y="166" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="257" y="166" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="281" y="166" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="305" y="166" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="329" y="166" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="353" y="166" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="233" y="190" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="257" y="190" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="281" y="190" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="305" y="190" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="329" y="190" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="353" y="190" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="233" y="214" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="257" y="214" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="281" y="214" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="305" y="214" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="329" y="214" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="353" y="214" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="233" y="238" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="257" y="238" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+      <rect x="281" y="238" width="24" height="24" fill="#5DC0C9" class="gridStroke"/>
+      <rect x="305" y="238" width="24" height="24" fill="#F3A13B" class="gridStroke"/>
+      <rect x="329" y="238" width="24" height="24" fill="#8EC9F1" class="gridStroke"/>
+      <rect x="353" y="238" width="24" height="24" fill="#7A68D8" class="gridStroke"/>
+    </g>
+  </g>
+  <g transform="translate(430 0)">
+    <text x="0" y="200" class="brand" font-size="108" fill="#16345E">Tile<tspan fill="#4A7BC4">Scope</tspan></text>
+    <text x="6" y="248" class="brand" font-size="30" fill="#667A99" font-weight="600" letter-spacing="2">SPATIAL RELATIONSHIPS IN CONTEXT</text>
+  </g>
+</svg>

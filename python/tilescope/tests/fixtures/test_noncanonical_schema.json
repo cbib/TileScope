@@ -1,0 +1,9 @@
+{
+  "columns": {
+    "region_id": "roi_id",
+    "coord_x": "x",
+    "coord_y": "y",
+    "expression_a": "gene1",
+    "expression_b": "gene2"
+  }
+}

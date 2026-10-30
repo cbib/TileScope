@@ -1,0 +1,6 @@
+{
+  "_comment": "Example: Enable stability panels in consensus visualization",
+  "visualization": {
+    "show_stability": true
+  }
+}

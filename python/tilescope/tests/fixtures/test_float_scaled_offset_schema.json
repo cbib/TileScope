@@ -1,0 +1,9 @@
+{
+  "columns": {
+    "roi_id": "roi_id",
+    "x": "x",
+    "y": "y",
+    "gene1": "gene1",
+    "gene2": "gene2"
+  }
+}

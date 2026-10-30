@@ -1,0 +1,20 @@
+{
+  "tessellation": {
+    "n": 5
+  },
+  "consensus": {
+    "min_spots_per_hex": 3,
+    "min_tess_coverage_fraction": 0.2
+  },
+  "roi_filters": {
+    "min_roi_spots": 50,
+    "min_context_spots": 200
+  },
+  "permutations": 100,
+  "seed": 42,
+  "output_dir": "tilescope_output",
+  "verbose": false,
+  "visualization": {
+    "show_stability": false
+  }
+}

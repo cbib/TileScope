@@ -1,0 +1,17 @@
+{
+  "_comment": "Debugging profile: verbose logging, minimal permutations, fast execution",
+  "_profile": "debugging",
+  "tessellation": {
+    "n": 2
+  },
+  "roi_filters": {
+    "min_roi_spots": 20,
+    "min_context_spots": 20
+  },
+  "consensus": {
+    "min_spots_per_hex": 3,
+    "min_tess_coverage_fraction": 0.5
+  },
+  "permutations": 9,
+  "verbose": true
+}

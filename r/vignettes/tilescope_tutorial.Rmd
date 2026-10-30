@@ -1,0 +1,86 @@
+---
+title: "Preparing TileScope input from a Seurat object"
+output: html_document
+vignette: >
+  %\VignetteIndexEntry{Preparing TileScope input from a Seurat object}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, warning = FALSE, message = FALSE)
+```
+
+The TileScope analysis engine is a Python package that consumes pairwise
+CSV inputs of the form `x, y, gene1, gene2, roi_id`. This R package
+provides one bridge function that produces those CSVs from a Seurat
+spatial object.
+
+## Load
+
+```{r load}
+library(TileScope)
+library(Seurat)
+```
+
+## Prepare a Seurat object
+
+Any Visium Seurat object with (i) spatial coordinates readable through
+`GetTissueCoordinates()`, (ii) a normalized-expression layer, and
+(iii) a metadata column holding your ROI or spatial-cluster labels
+will work. For example:
+
+```{r load_seurat}
+object <- readRDS("path/to/sample_1.rds")
+DefaultAssay(object) <- "Spatial"
+```
+
+## Export pairwise CSVs
+
+`extract_data_from_seurat_to_csv()` writes one CSV per gene pair to
+`out_path`. The `input_data` argument dispatches on its type:
+
+* a character vector: every pairwise combination of the listed genes;
+* a list of length-2 character vectors: only those explicit pairs;
+* a named list of gene vectors: each name is scored via
+  `Seurat::AddModuleScore()` and pairs of scores are written.
+
+```{r export_gene_pairs}
+extract_data_from_seurat_to_csv(
+  seurat_obj   = object,
+  sample_id    = "sample_1",
+  assay        = "Spatial",
+  layer        = "data",
+  metadata_col = "spatial_cluster",
+  input_data   = c("GFAP", "PDGFRA", "MKI67"),
+  out_path     = "tilescope_inputs/"
+)
+```
+
+## Run the Python analysis engine
+
+Install `tilescope` in a Python environment, then invoke the CLI on
+each generated CSV:
+
+```bash
+tilescope tilescope_inputs/sample_1_expression_data_GFAP_PDGFRA.csv \
+  --profile standard \
+  --output results/sample_1/GFAP_PDGFRA/
+```
+
+The output directory contains the canonical CSVs (correlations,
+enrichments, consensus, Moran, cross-grain sensitivity), the
+diagnostic PDFs, and an `analysis_report.html` summary.
+
+Alternatively, drive TileScope directly from R via `reticulate`; see
+`python/tilescope/api/R_INTEGRATION_GUIDE.md` for the exact call.
+
+## Join results back to Seurat
+
+```{r join_back}
+roi_result <- read.csv("results/sample_1/GFAP_PDGFRA/roi_correlations.csv")
+roi_key    <- as.character(object@meta.data$spatial_cluster)
+object$tilescope_correlation <- roi_result$corr_obs[
+  match(roi_key, as.character(roi_result$roi_id))
+]
+```

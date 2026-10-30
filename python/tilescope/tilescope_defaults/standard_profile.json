@@ -1,0 +1,16 @@
+{
+  "_comment": "Standard analysis profile: balanced speed and statistical rigor",
+  "_profile": "standard",
+  "tessellation": {
+    "n": 10
+  },
+  "roi_filters": {
+    "min_roi_spots": 40,
+    "min_context_spots": 50
+  },
+  "consensus": {
+    "min_tess_coverage_fraction": 0.6666666666666666
+  },
+  "permutations": 99,
+  "verbose": false
+}

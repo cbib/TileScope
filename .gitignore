@@ -1,0 +1,44 @@
+# Session-local working notes (per project CLAUDE.md)
+MEMORY.md
+ERRORS.md
+CLAUDE.md
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Package build / install artifacts
+*.egg-info/
+build/
+dist/
+
+# Test caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local run outputs (created by ad-hoc pipeline runs)
+tilescope_output/
+
+# EDA derived per-spot artefacts (regeneratable from scripts).
+# Keep summaries, per_sample_summary.csv, and report.md — those are
+# small, human-readable, and the audit trail. Per-spot ledgers can
+# be tens of MB per repo commit and are trivially regeneratable.
+docs/eda/output/**/*_ledger.csv
+
+# Stray test-output artifacts (pytest writing outside python/tilescope/tests/)
+/tests/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+.claude/
+.Rhistory

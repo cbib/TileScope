@@ -1,0 +1,19 @@
+Package: TileScope
+Title: Seurat-to-TileScope input bridge
+Version: 3.0.0
+Authors@R:
+    person("Maialen", "Arrieta-Lobo", , "maialen.arrieta@u-bordeaux.fr", role = c("aut", "cre"))
+Description: Prepares pairwise input CSVs from a Seurat spatial object for
+    downstream analysis by the TileScope Python analysis engine
+    (see python/tilescope/api/R_INTEGRATION_GUIDE.md).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    Seurat,
+    SeuratObject,
+    glue
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

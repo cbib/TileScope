@@ -1,0 +1,17 @@
+{
+  "_comment": "Exploratory analysis profile: fast iteration, loose filters, fewer permutations",
+  "_profile": "exploratory",
+  "tessellation": {
+    "n": 3
+  },
+  "roi_filters": {
+    "min_roi_spots": 30,
+    "min_context_spots": 30
+  },
+  "consensus": {
+    "min_spots_per_hex": 3,
+    "min_tess_coverage_fraction": 0.6666666666666666
+  },
+  "permutations": 49,
+  "verbose": false
+}
