@@ -31,9 +31,9 @@ Useful options:
 
 ```bash
 tilescope --help
-tilescope data.csv --profile exploratory
-tilescope data.csv --config-run run.config.json
-tilescope data.csv --set tessellation.n=20
+tilescope data.csv --profile exploratory --feature-a-id featureA --feature-b-id featureB
+tilescope data.csv --config-run run.config.json --feature-a-id featureA --feature-b-id featureB
+tilescope data.csv --set tessellation.n=20 --feature-a-id featureA --feature-b-id featureB
 ```
 
 Configuration precedence is:
