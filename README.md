@@ -172,7 +172,7 @@ report (`analysis_report.html`) is explained in
 The scripts that assemble the paper's figures and the supplementary
 data bundles live in the companion repository
 [cbib/TileScope-results](https://github.com/cbib/TileScope-results) 
-and Zenodo .
+and on the [Zenodo DOI 10.5281/zenodo.23535234](https://zenodo.org/records/23535235).
 The four Supplementary Data ZIPs attached to the paper package the
 numerical evidence for Figures 2, 3, 4 and the Xenium feasibility
 section — reviewers can rebuild each panel's spot/cell values from those
