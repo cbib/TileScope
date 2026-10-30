@@ -35,7 +35,7 @@ dataset generated for the study, and Xenium single-cell data.
 If you use TileScope, please cite:
 
 > *TileScope: multi-support spatial statistics for pairs of continuous
-> features in spatial transcriptomics data.* Manuscript in preparation.
+> features in spatial transcriptomics data.* Manuscript submitted.
 > [GitHub](https://github.com/cbib/TileScope) · companion analysis
 > repository: [cbib/TileScope-results](https://github.com/cbib/TileScope-results) 
 > companion data bundles: [Zenodo DOI](https://zenodo.org/records/23535235) 
