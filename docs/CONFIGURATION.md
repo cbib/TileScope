@@ -88,12 +88,12 @@ value equals the frozen value.
 ## CLI examples
 
 ```bash
-tilescope data.csv --profile standard
-tilescope data.csv --config-run run.config.json
-tilescope data.csv --profile standard --n-tessellations 20
-tilescope data.csv --set consensus.min_tess_coverage_fraction=0.7
+tilescope data.csv --profile standard --feature-a-id featureA --feature-b-id featureB
+tilescope data.csv --config-run run.config.json --feature-a-id featureA --feature-b-id featureB
+tilescope data.csv --profile standard --n-tessellations 20 --feature-a-id featureA --feature-b-id featureB
+tilescope data.csv --set consensus.min_tess_coverage_fraction=0.7 --feature-a-id featureA --feature-b-id featureB
 tilescope data.csv --set technology=xenium \
-  --set technology_options.xenium_local_factor=2.0
+  --set technology_options.xenium_local_factor=2.0 --feature-a-id featureA --feature-b-id featureB
 ```
 
 An explicitly supplied CLI flag wins over the corresponding JSON/profile
@@ -120,22 +120,43 @@ same layering rules.
 ## Dataset schema
 
 `--config-dataset` describes source-column mappings. It is independent of run
-configuration.
+configuration and lets you keep your file's original column names
+instead of renaming them. Each entry maps **a column in your file**
+(left) to **the name TileScope uses internally** (right). The
+right-hand side is fixed and must cover all five of `x`, `y`,
+`gene1`, `gene2` and `roi_id`.
+
+For example, if the user has created a source file where the columns
+in the file corresponding to gene/signature expression are 
+`cell_cycle_proliferation__score` and `myeloid_phagocytic__score`:
 
 ```json
 {
   "columns": {
     "array_row": "x",
     "array_col": "y",
-    "feature_a": "gene1",
-    "feature_b": "gene2",
+    "cell_cycle_proliferation__score": "gene1",
+    "myeloid_phagocytic__score": "gene2",
     "cluster": "roi_id"
   }
 }
 ```
 
-The DataFrame API expects canonical columns directly:
-`x`, `y`, `gene1`, `gene2`, and `roi_id`.
+The DataFrame API expects canonical columns directly: `x`, `y`, `gene1`, 
+`gene2`, and `roi_id`. `x` and `y` must be physical or image coordinates 
+(e.g. full-resolution pixel positions or microns).
+
+
+The schema only maps columns. The feature names are still passed on
+the command line:
+
+```bash
+tilescope sample.csv --config-dataset dataset.schema.json \
+  --feature-a-id cell_cycle_proliferation__score \
+  --feature-b-id myeloid_phagocytic__score \
+  --profile standard --output results/
+```
+
 
 Tile and consensus "density" values retain their established meaning: the
 mean feature value per contributing spot or cell observation. For Xenium this is a

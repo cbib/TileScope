@@ -38,7 +38,7 @@ If you use TileScope, please cite:
 > features in spatial transcriptomics data.* Manuscript submitted.
 > [GitHub](https://github.com/cbib/TileScope) · companion analysis
 > repository: [cbib/TileScope-results](https://github.com/cbib/TileScope-results) 
-> companion data bundles: [Zenodo DOI](https://zenodo.org/records/23535235) 
+>  · companion data bundles: [Zenodo DOI](https://zenodo.org/records/23535235) 
 
 
 ## Install
@@ -53,6 +53,18 @@ python -m venv venv
 source venv/bin/activate
 pip install -e "python[test]"
 ```
+
+The HTML report embeds its figures through `pdf2image`, which needs the
+poppler utilities on the system `PATH`:
+
+```bash
+sudo apt-get install poppler-utils   # Debian/Ubuntu
+brew install poppler                 # macOS
+conda install -c conda-forge poppler # conda environments
+```
+
+Without poppler the run still completes and writes all CSVs and PDFs,
+but `analysis_report.html` is generated without its figures.
 
 ## Minimum run
 
@@ -83,7 +95,7 @@ modified.
 Command line:
 
 ```bash
-tilescope data.csv --profile standard --output results/
+tilescope data.csv --profile standard --feature-a-id featureA --feature-b-id featureB --output results/
 ```
 
 Programmatic:
@@ -96,6 +108,7 @@ results = run_tilescope_from_csv(
     profile="standard",
     output_dir="results/",
     export=True,
+    html_report=True,
     feature_a_id="Neuron",
     feature_b_id="AC",
 )

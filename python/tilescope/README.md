@@ -19,10 +19,12 @@ Python 3.10 or newer is required.
 ## CLI
 
 ```bash
-tilescope data.csv --profile standard --output results/
+tilescope data.csv --profile standard --feature-a-id featureA --feature-b-id featureB --output results/
 ```
 
 The input must contain `x`, `y`, `gene1`, `gene2`, and `roi_id`.
+`featureA` and `featureB` correspond to the actual genes or signatures
+whose expression/scores are contained on columns `gene1` and `gene2`.
 Use `--config-dataset` when source column names differ.
 
 Useful options:

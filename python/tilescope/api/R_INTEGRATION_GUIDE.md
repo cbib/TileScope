@@ -33,7 +33,9 @@ Then run:
 ```bash
 tilescope tilescope_inputs/sample_1_expression_data_GFAP_PDGFRA.csv \
   --profile standard \
-  --output results/
+  --output results/  \
+  --feature-a-id GFAP \
+  --feature-b-id PDGFRA
 ```
 
 ## Direct reticulate call
