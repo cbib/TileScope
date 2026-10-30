@@ -238,7 +238,7 @@ Input CSV format:
         log_level = 'WARNING'
     else:
         # Default: INFO (or use config.verbose if present)
-        log_level = 'DEBUG' if run_cfg.verbose else 'INFO'
+        log_level = 'DEBUG' if run_cfg.run_config.verbose else 'INFO'
 
     configure_tilescope_logging(verbose=(log_level == 'DEBUG'), level=log_level)
 
@@ -273,7 +273,7 @@ Input CSV format:
         logger.info("=" * 60)
         logger.info("Analysis Complete")
         logger.info("=" * 60)
-        logger.info(f"Results directory: {Path(run_cfg.output_dir).resolve()}")
+        logger.info(f"Results directory: {Path(run_cfg.run_config.output_dir).resolve()}")
         logger.info("Summary:")
         logger.info(f"  Parent-ROI analyses: {len(results['roi_enrichment'])} ROIs")
         logger.info(f"  Consensus hexagons: {len(results.get('consensus_hexes_df', []))} hexes")

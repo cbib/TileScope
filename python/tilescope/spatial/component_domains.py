@@ -487,6 +487,28 @@ def _extract_polygonal_geometry(geom) -> ComponentPolygon:
     return Polygon()
 
 
+def _drop_sliver_holes(geom: ComponentPolygon, area_tol: float) -> ComponentPolygon:
+    """Remove interior rings whose area is at most `area_tol`.
+
+    Unioning disk buffers with Delaunay triangles can leave a zero-area
+    ring along a shared triangle edge, depending on floating-point
+    rounding at the given coordinate scale. Such rings are construction
+    residue, not holes; keeping them makes `n_holes` and the ring
+    structure of `G_c` scale-dependent.
+    """
+    def _clean(poly: Polygon) -> Polygon:
+        kept = [r for r in poly.interiors if Polygon(r).area > area_tol]
+        if len(kept) == len(poly.interiors):
+            return poly
+        return Polygon(poly.exterior, kept)
+
+    if isinstance(geom, Polygon) and not geom.is_empty:
+        return _clean(geom)
+    if isinstance(geom, MultiPolygon):
+        return MultiPolygon([_clean(p) for p in geom.geoms])
+    return geom
+
+
 _REGION_ORDER_INF = float("inf")
 
 
@@ -1022,8 +1044,11 @@ def build_component_polygons(
             ),
             reuse_constructive_overlays=optimize_planar_delaunay_geometry,
         )
-        G_c = _extract_polygonal_geometry(
-            make_valid(mask_composition.raw_geometry)
+        G_c = _drop_sliver_holes(
+            _extract_polygonal_geometry(
+                make_valid(mask_composition.raw_geometry)
+            ),
+            area_tol,
         )
 
         partition = partition_component_domain(
