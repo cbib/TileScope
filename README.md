@@ -95,7 +95,7 @@ modified.
 Command line:
 
 ```bash
-tilescope data.csv --profile standard --feature-a-id featureA --feature-b-id featureB --output results/
+tilescope data.csv --profile standard --feature-a-id Neuron --feature-b-id AC --output results/
 ```
 
 Programmatic:
